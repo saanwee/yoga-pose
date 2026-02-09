@@ -131,7 +131,7 @@ if __name__ == "__main__":
         else:
             counter = 0
 
-
+        rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         predicted_poses = get_topk_predictions(model, frame, 2, transform, device)
 
         achieved = achieved_pose(curr_pose, predicted_poses, recent_poses, 5)
